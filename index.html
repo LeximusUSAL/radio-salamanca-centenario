@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Salamanca EAJ 22 - Centenario 1926-2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'EB Garamond', Georgia, serif;
+            background: #ffffff;
+            color: #333;
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #800020 0%, #a00030 50%, #800020 100%);
+            color: white;
+        }
+
+        .header-pre {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        .header-sub {
+            font-size: 1.4rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .header-tech {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .fleuron {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            letter-spacing: 20px;
+            color: #800020;
+        }
+
+        header .fleuron {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.9;
+            color: #444;
+        }
+
+        .btn-centenario {
+            display: inline-block;
+            background: linear-gradient(135deg, #800020 0%, #a00030 100%);
+            color: white;
+            padding: 25px 60px;
+            border-radius: 12px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'EB Garamond', Georgia, serif;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 6px 25px rgba(128, 0, 32, 0.5);
+            cursor: default;
+            animation: pulse 2s ease-in-out infinite;
+            margin: 20px 0 40px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 50px 0 30px;
+            font-weight: 500;
+            color: #800020;
+        }
+
+        /* TABS NAVIGATION - estilo ONDAS */
+        .tabs-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .tab-button {
+            background: white;
+            border: 2px solid #800020;
+            color: #800020;
+            padding: 20px 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-width: 220px;
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.15);
+        }
+
+        .tab-button:hover {
+            background: rgba(128, 0, 32, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(128, 0, 32, 0.25);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, #800020 0%, #a00030 100%);
+            color: white;
+            border-color: #800020;
+            box-shadow: 0 6px 25px rgba(128, 0, 32, 0.4);
+        }
+
+        .tab-button .tab-number {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .tab-button .tab-date {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .tab-button .tab-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* TAB CONTENT */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: white;
+            color: #800020;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: 'EB Garamond', Georgia, serif;
+            text-decoration: none;
+            border: 2px solid #800020;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-volver:hover {
+            background: #800020;
+            color: white;
+        }
+
+        /* CARDS estilo ONDAS */
+        .semana-card {
+            background: white;
+            border: 2px solid #800020;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(128, 0, 32, 0.1);
+        }
+
+        .semana-header {
+            background: linear-gradient(135deg, #800020 0%, #a00030 100%);
+            padding: 25px 30px;
+            border-bottom: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: white;
+        }
+
+        .semana-fecha {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .semana-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .semana-content {
+            padding: 30px;
+        }
+
+        .nota-historica {
+            background: rgba(128, 0, 32, 0.05);
+            border: 1px solid rgba(128, 0, 32, 0.2);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .nota-historica h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #800020;
+        }
+
+        .dia-programacion {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(128, 0, 32, 0.1);
+        }
+
+        .dia-programacion:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .dia-titulo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #800020;
+            color: #800020;
+        }
+
+        .horario-bloque {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .horario-hora {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #a00030;
+        }
+
+        .horario-contenido {
+            padding-left: 20px;
+            border-left: 1px solid rgba(128, 0, 32, 0.2);
+            color: #444;
+        }
+
+        .obra-item {
+            margin: 8px 0;
+            line-height: 1.7;
+        }
+
+        .obra-titulo {
+            font-style: italic;
+            color: #333;
+        }
+
+        .obra-compositor {
+            color: #666;
+        }
+
+        .artista-nombre {
+            font-weight: 600;
+            color: #800020;
+        }
+
+        .artistas-section {
+            background: rgba(128, 0, 32, 0.03);
+            border: 1px solid rgba(128, 0, 32, 0.15);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .artistas-titulo {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #800020;
+        }
+
+        .artistas-lista {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .artista-tag {
+            background: rgba(128, 0, 32, 0.08);
+            border: 1px solid rgba(128, 0, 32, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: #800020;
+        }
+
+        .compositores-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(128, 0, 32, 0.1);
+        }
+
+        .compositor-tag {
+            background: rgba(128, 0, 32, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 60px;
+            border-top: 2px solid #800020;
+            background: linear-gradient(135deg, #800020 0%, #a00030 100%);
+            color: white;
+        }
+
+        .footer-logo {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            opacity: 0.9;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.7;
+        }
+
+        .footer-credit {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-top: 25px;
+        }
+
+        .footer-credit a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer .fleuron {
+            color: rgba(255,255,255,0.7);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .btn-centenario {
+                font-size: 1.4rem;
+                padding: 20px 40px;
+            }
+
+            .tab-button {
+                min-width: 160px;
+                padding: 15px 20px;
+            }
+
+            .semana-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .dia-titulo {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-pre">Archivo Sonoro de la Radiodifusion Espanola</div>
+        <h1>Radio Salamanca EAJ 22</h1>
+        <div class="header-sub">Programaciones historicas de la primera emisora salmantina</div>
+        <div class="header-tech">Salamanca, 1926 &bull; 405 metros &bull; 500 vatios</div>
+        <div class="fleuron">&#10022; &#10022; &#10022;</div>
+        <div class="btn-centenario">Centenario 1926 - 2026</div>
+    </header>
+
+    <div class="container">
+        <p class="intro-text">
+            El <strong>11 de abril de 1926</strong>, Radio Salamanca EAJ 22 inicio sus emisiones,
+            convirtiendose en una de las primeras estaciones de radio de Espana. Estas programaciones,
+            publicadas en la revista <strong>ONDAS</strong> de Madrid, constituyen un testimonio
+            excepcional de los origenes de la radiodifusion salmantina y de la vida musical
+            de Castilla y Leon hace un siglo.
+        </p>
+
+        <div class="fleuron">&#10022; &#10022; &#10022;</div>
+
+        <h2 class="section-title">Programaciones por Semanas</h2>
+
+        <!-- TABS NAVIGATION -->
+        <nav class="tabs-navigation" id="mainNav">
+            <button class="tab-button" onclick="showTab('semana1')">
+                <span class="tab-number">I</span>
+                <span class="tab-date">11-17 abril 1926</span>
+                <span class="tab-label">Emision Inaugural</span>
+            </button>
+            <button class="tab-button" onclick="showTab('semana2')">
+                <span class="tab-number">II</span>
+                <span class="tab-date">2-8 mayo 1926</span>
+                <span class="tab-label">Semana 4</span>
+            </button>
+            <button class="tab-button" onclick="showTab('semana3')">
+                <span class="tab-number">III</span>
+                <span class="tab-date">4-10 julio 1926</span>
+                <span class="tab-label">Semana 13</span>
+            </button>
+            <button class="tab-button" onclick="showTab('semana4')">
+                <span class="tab-number">IV</span>
+                <span class="tab-date">25 julio 1926</span>
+                <span class="tab-label">Semana 16</span>
+            </button>
+        </nav>
+
+        <!-- SEMANA 1: INAUGURACION -->
+        <div id="semana1" class="tab-content">
+            <button class="btn-volver" onclick="volverInicio()">&#8592; Volver a semanas</button>
+            <article class="semana-card">
+                <div class="semana-header">
+                    <div class="semana-fecha">11 - 17 de abril de 1926</div>
+                    <div class="semana-badge">Emision Inaugural</div>
+                </div>
+                <div class="semana-content">
+
+                    <div class="nota-historica">
+                        <h3>Nota Historica</h3>
+                        <p>El <strong>domingo 11 de abril de 1926</strong> se inauguro oficialmente Radio Salamanca EAJ 22,
+                        convirtiendose en una de las primeras emisoras de radio de Espana.</p>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Domingo, 11 de abril de 1926 - INAUGURACION</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 h - Emision de Inauguracion</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Marcha Real"</span>, por el <span class="artista-nombre">Quinteto Radio-Salamanca</span></div>
+                                <div class="obra-item">Saludo de Radio-Salamanca, por <span class="artista-nombre">D. Antonio L. de las Mozas</span></div>
+                                <div class="obra-item">Discursos de inauguracion por las autoridades</div>
+                                <div class="obra-item"><span class="obra-titulo">"La bejarana"</span> (fantasia) - <span class="obra-compositor">Serrano y Alonso</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Noticias, Bolsa y boletin meteorologico</div>
+                                <div class="obra-item"><span class="artista-nombre">Orquesta Filarmonica Salmantina</span>:</div>
+                                <div class="obra-item"><span class="obra-titulo">"En la Alhambra"</span> - <span class="obra-compositor">Breton</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Manon"</span> (seleccion) - <span class="obra-compositor">Massenet</span></div>
+                                <div class="obra-item"><span class="obra-titulo">Preludio del tercer acto de "Lohengrin"</span> - <span class="obra-compositor">Wagner</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Celebre vals"</span> - <span class="obra-compositor">Chopin</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Una noche en Calatayud"</span> (fantasia) - <span class="obra-compositor">P. Luna</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto vocal</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">Tenor Sr. Benito</span>: <span class="obra-titulo">"La linda tapada"</span>, <span class="obra-titulo">"Ay, ay, ay"</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Baritono Sr. Rodriguez</span>: <span class="obra-titulo">"La calesera"</span>, <span class="obra-titulo">"El pregon del barrilito"</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Sres. V. Marcos y P. Rodriguez</span>: <span class="obra-titulo">"Mosaico de zarzuelas"</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:30 h - Bailables</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Bailables americanos, por <span class="artista-nombre">The Five Merosi Jazz-band</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Lunes, 12 de abril de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Cartelera de teatros. Intermedio comico. Concierto por el <span class="artista-nombre">Quinteto Radio-Salamanca</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Los calabreses"</span> (serenata) - <span class="obra-compositor">P. Luna</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Meus amores"</span> (balada) - <span class="obra-compositor">I. Baldomir</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Bohemios"</span> (seleccion) - <span class="obra-compositor">A. Vives</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Dona Francisquita"</span> (siempre es el amor) - <span class="obra-compositor">A. Vives</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Charla</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Amenidades medicas"</span>, charla por el <span class="artista-nombre">Doctor Calama Sanz</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Martes, 13 de abril de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 h - Concierto Clasico</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Momento musical"</span> (nums. 2 y 3) - <span class="obra-compositor">Schubert</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Symphonie concertante"</span>: Allegro maestroso, Andante y presto - <span class="obra-compositor">W. A. Mozart</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Trio"</span>: Allegro moderato, Scherzo, Andante expresivo - <span class="obra-compositor">C. M. Weber</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto vocal y bailables</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">Tenor Sr. Benito</span>: <span class="obra-titulo">"Mi tierra"</span>, <span class="obra-titulo">"Princesita"</span>, <span class="obra-titulo">"El huerfano"</span>, <span class="obra-titulo">"El trust de los tenorios"</span></div>
+                                <div class="obra-item">Bailables por <span class="artista-nombre">The Five Merosi Jazz-band</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Viernes, 16 de abril de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 h - Recital de organo y violin</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Recital de organo expresivo y violin por los maestros <span class="artista-nombre">B. G. Bernalt</span> y <span class="artista-nombre">J. Rodriguez</span></div>
+                                <div class="obra-item">Profesores de la Escuela de Nobles y Bellas Artes de San Eloy</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto vocal</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">Baritono Sr. P. Rodriguez</span>:</div>
+                                <div class="obra-item"><span class="obra-titulo">"Molinos de viento"</span> (serenata) - <span class="obra-compositor">P. Luna</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Torna a Sorrento"</span>, <span class="obra-titulo">"El guitarrico"</span>, <span class="obra-titulo">"Maruxa"</span> - <span class="obra-compositor">Vives</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Sabado, 17 de abril de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Danza mora"</span> - <span class="obra-compositor">F. Tarrega</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Aria de la suite en re"</span> - <span class="obra-compositor">Bach</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Sanson y Dalila"</span> (fantasia) - <span class="obra-compositor">Saint-Saens</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"El gal de Ripoll"</span> (sardana) - <span class="obra-compositor">Ribas</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Charla literaria</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"La aldea castellana"</span> (apunte realista), trabajo inedito por <span class="artista-nombre">D. Jose Crespo Salazar</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artistas-section">
+                        <div class="artistas-titulo">Artistas y agrupaciones</div>
+                        <div class="artistas-lista">
+                            <span class="artista-tag">Quinteto Radio-Salamanca</span>
+                            <span class="artista-tag">Orquesta Filarmonica Salmantina</span>
+                            <span class="artista-tag">The Five Merosi Jazz-band</span>
+                            <span class="artista-tag">Maestro B. G. Bernalt</span>
+                            <span class="artista-tag">Sr. Benito (tenor)</span>
+                            <span class="artista-tag">Sr. P. Rodriguez (baritono)</span>
+                        </div>
+                        <div class="compositores-section">
+                            <div class="artistas-titulo">Compositores interpretados</div>
+                            <div class="artistas-lista">
+                                <span class="artista-tag compositor-tag">Serrano</span>
+                                <span class="artista-tag compositor-tag">Breton</span>
+                                <span class="artista-tag compositor-tag">Massenet</span>
+                                <span class="artista-tag compositor-tag">Wagner</span>
+                                <span class="artista-tag compositor-tag">Chopin</span>
+                                <span class="artista-tag compositor-tag">P. Luna</span>
+                                <span class="artista-tag compositor-tag">Vives</span>
+                                <span class="artista-tag compositor-tag">Schubert</span>
+                                <span class="artista-tag compositor-tag">Mozart</span>
+                                <span class="artista-tag compositor-tag">Weber</span>
+                                <span class="artista-tag compositor-tag">Bach</span>
+                                <span class="artista-tag compositor-tag">Saint-Saens</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- SEMANA 2: 2-8 mayo 1926 -->
+        <div id="semana2" class="tab-content">
+            <button class="btn-volver" onclick="volverInicio()">&#8592; Volver a semanas</button>
+            <article class="semana-card">
+                <div class="semana-header">
+                    <div class="semana-fecha">2 - 8 de mayo de 1926</div>
+                    <div class="semana-badge">Semana 4</div>
+                </div>
+                <div class="semana-content">
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Domingo, 2 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 h - Sesion infantil</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Sesion dedicada a los ninos. Lecturas y cuentos infantiles</div>
+                                <div class="obra-item">Concurso: radiandose un cuento con adivinanza, al que acierte se le regalara un aparatito de galena</div>
+                                <div class="obra-item">Concierto de piano y musica ligera</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Efemerides. Bailables por <span class="artista-nombre">The Five Merosi Jazz-band</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Quinteto Radio Salamanca</span> (dir. <span class="artista-nombre">Maestro Bernalt</span>):</div>
+                                <div class="obra-item"><span class="obra-titulo">"Canto andaluz"</span> - <span class="obra-compositor">Muriano</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Pierrot y Colombina"</span> (suite) - <span class="obra-compositor">M. Burgos</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Rapsodia cubana"</span> - <span class="obra-compositor">I. Albeniz</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Alma de Dios"</span> (seleccion) - <span class="obra-compositor">J. Serrano</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La calesera"</span> (gavota)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Lunes, 3 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Resumen taurino por el revistero <span class="artista-nombre">"El Tio de los Lentes"</span></div>
+                                <div class="obra-item">Concierto por el quinteto de la Estacion</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Conferencia</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Cooperativismo agrario"</span>, conferencia por <span class="artista-nombre">D. Nicolas Garcia Carrasco</span>, director de La Gaceta Regional</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:15 h - Musica de camara</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Adagio del sexteto"</span> - <span class="obra-compositor">Beethoven</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La danse de Anitra"</span> - <span class="obra-compositor">E. Grieg</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Lohengrin"</span> (fantasia) - <span class="obra-compositor">R. Wagner</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Los maestros cantores"</span> - <span class="obra-compositor">Wagner</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Lombardi"</span> (preludio, tercetto e coro) - <span class="obra-compositor">G. Verdi</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Martes, 4 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:45 h - Concierto vocal</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Humorismo e imitaciones por <span class="artista-nombre">Xheniuse</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Sres. A. Benito (tenor) y Caballero (baritono)</span>: Romanzas, canciones y duetos</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"El rey que rabio"</span> (fantasia, a peticion) - <span class="obra-compositor">R. Chapi</span></div>
+                                <div class="obra-item"><span class="obra-titulo">Intermedio de "La leyenda del beso"</span> - <span class="obra-compositor">Soutullo y Vert</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Dona Francisquita"</span> (bolero) - <span class="obra-compositor">Vives</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La favorita"</span> (fantasia) - <span class="obra-compositor">Donizetti</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La boda de Luis Alonso"</span> (intermedio) - <span class="obra-compositor">Gimenez</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Rapsodia gallega"</span> - <span class="obra-compositor">I. A. Veiga</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Miercoles, 5 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:45 - 22:30 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Jotas con acompanamiento de rondalla</div>
+                                <div class="obra-item">Concierto por la <span class="artista-nombre">Agrupacion Musical Arte</span> (rondalla)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Jueves, 6 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:45 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Concurso de cante flamenco</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">Quinteto Radio Salamanca</span> (dir. <span class="artista-nombre">D. Bernardo G. Bernalt</span>):</div>
+                                <div class="obra-item"><span class="obra-titulo">"Ensenanza libre"</span> (gavota) - <span class="obra-compositor">G. Gimenez</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Suite argentina"</span> - <span class="obra-compositor">F. Guerra</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Molinos de viento"</span> (seleccion) - <span class="obra-compositor">P. Luna</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Garin"</span> - <span class="obra-compositor">T. Breton</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Maria Sol"</span> (cancion de los suspiros) - <span class="obra-compositor">Guerrero</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Viernes, 7 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:45 h - Concierto vocal</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">Senores Ceballos (tenor) y Cuesta (baritono)</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">22:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Ernani"</span> (pot-pourri) - <span class="obra-compositor">G. Verdi</span></div>
+                                <div class="obra-item"><span class="obra-titulo">Balada de "El senor Joaquin"</span> - <span class="obra-compositor">Caballero</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Andante cantabile"</span> - <span class="obra-compositor">Tschaikowsky</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Cordoba"</span> - <span class="obra-compositor">I. Albeniz</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Sabado, 8 de mayo de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:45 - 22:30 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Jotas con acompanamiento de rondalla</div>
+                                <div class="obra-item">Concierto por la <span class="artista-nombre">Agrupacion Musical Arte</span> (rondalla)</div>
+                                <div class="obra-item">Bailables por el <span class="artista-nombre">Jazz-band</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artistas-section">
+                        <div class="artistas-titulo">Artistas y agrupaciones</div>
+                        <div class="artistas-lista">
+                            <span class="artista-tag">Quinteto Radio Salamanca</span>
+                            <span class="artista-tag">The Five Merosi Jazz-band</span>
+                            <span class="artista-tag">Agrupacion Musical Arte</span>
+                            <span class="artista-tag">Maestro Bernalt</span>
+                            <span class="artista-tag">A. Benito (tenor)</span>
+                            <span class="artista-tag">Ceballos (tenor)</span>
+                            <span class="artista-tag">Xheniuse</span>
+                        </div>
+                        <div class="compositores-section">
+                            <div class="artistas-titulo">Compositores interpretados</div>
+                            <div class="artistas-lista">
+                                <span class="artista-tag compositor-tag">Albeniz</span>
+                                <span class="artista-tag compositor-tag">Beethoven</span>
+                                <span class="artista-tag compositor-tag">Grieg</span>
+                                <span class="artista-tag compositor-tag">Wagner</span>
+                                <span class="artista-tag compositor-tag">Verdi</span>
+                                <span class="artista-tag compositor-tag">Chapi</span>
+                                <span class="artista-tag compositor-tag">Donizetti</span>
+                                <span class="artista-tag compositor-tag">Vives</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- SEMANA 3: 4-10 julio 1926 -->
+        <div id="semana3" class="tab-content">
+            <button class="btn-volver" onclick="volverInicio()">&#8592; Volver a semanas</button>
+            <article class="semana-card">
+                <div class="semana-header">
+                    <div class="semana-fecha">4 - 10 de julio de 1926</div>
+                    <div class="semana-badge">Semana 13</div>
+                </div>
+                <div class="semana-content">
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Domingo, 4 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 - 18:00 h - Emision infantil</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Pequeno radioescucha"</span> (cuento)</div>
+                                <div class="obra-item">Historietas comicas y recitados, por el locutor <span class="artista-nombre">Sr. Prieto</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="artista-nombre">El Sexteto</span>:</div>
+                                <div class="obra-item"><span class="obra-titulo">"Orgullo espanol"</span> (pasodoble) - <span class="obra-compositor">M. Worct</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Serenata"</span> - <span class="obra-compositor">Mendelssohn</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Coppelia"</span> (fantasia) - <span class="obra-compositor">Leo Delibes</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La favorita"</span> (fantasia) - <span class="obra-compositor">Donizetti</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Tenor Sr. Benito</span>: <span class="obra-titulo">"El piropo"</span>, <span class="obra-titulo">"Noche verbenera"</span></div>
+                                <div class="obra-item">Solo de saxofon por el <span class="artista-nombre">Sr. Feixerado</span></div>
+                                <div class="obra-item">Bailables por <span class="artista-nombre">Beibdugoceff-Jazz</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Lunes, 5 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 h</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Resumen taurino por <span class="artista-nombre">"El Tio de los Lentes"</span></div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Chicuelo"</span> (pasodoble) - <span class="obra-compositor">Tuty y Martra</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Moros y cristianos"</span> (fantasia) - <span class="obra-compositor">J. Serrano</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"El trovador"</span> (fantasia) - <span class="obra-compositor">C. Verdi</span></div>
+                                <div class="obra-item">Solo de piano por el <span class="artista-nombre">Maestro Bernalt</span>: <span class="obra-titulo">"Quinto valse"</span> - <span class="obra-compositor">Godard</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La linda argentinita"</span> (tango)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Martes, 6 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"La mesonera de Tordesillas"</span> (pavana) - <span class="obra-compositor">Moreno Torroba</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Violoncello Sr. Ceballos</span>: <span class="obra-titulo">"Meditation"</span>, <span class="obra-titulo">"Reverie"</span> - <span class="obra-compositor">Schumann</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Lohengrin"</span> (fantasia) - <span class="obra-compositor">R. Wagner</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La sombra del Pilar"</span> (seleccion) - <span class="obra-compositor">J. Guerrero</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Miercoles, 7 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"La boda de Luis Alonso"</span> (intermedio) - <span class="obra-compositor">G. Gimenez</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Menuetto"</span> - <span class="obra-compositor">Beethoven</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Ernani"</span> (pot pourri) - <span class="obra-compositor">G. Verdi</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Tenor Sr. Benito</span>: <span class="obra-titulo">"Dolor de amar"</span>, <span class="obra-titulo">"La del panuelo rojo"</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Solista de violin Sr. Gonzalez</span>: <span class="obra-titulo">"Reve d'un soir"</span> (vals)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Jueves, 8 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Alma de Dios"</span> (seleccion) - <span class="obra-compositor">J. Serrano</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Andante cantabile"</span> - <span class="obra-compositor">Tchaikovski</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Sanson y Dalila"</span> (fantasia) - <span class="obra-compositor">Saint-Saens</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Solista de violin Sr. Ibanez</span>: <span class="obra-titulo">"Oriental"</span> - <span class="obra-compositor">Cesar Cui</span>; <span class="obra-titulo">"Romanza en fa"</span> - <span class="obra-compositor">Beethoven</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Viernes, 9 de julio de 1926 - Homenaje a Schubert</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto de Musica de Camara dedicado a F. Schubert</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Biografia de Schubert y su obra musical</div>
+                                <div class="obra-item"><span class="obra-titulo">"Momento musical numero 2"</span> - <span class="obra-compositor">Schubert</span></div>
+                                <div class="obra-item"><span class="obra-titulo">Entreacto de "Rosamonde"</span> - <span class="obra-compositor">Schubert</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Impromptu num. 4"</span>, piano solo, <span class="artista-nombre">Sr. Bernalt</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Ave Maria"</span>, violin y piano</div>
+                                <div class="obra-item"><span class="obra-titulo">"Serenata"</span>, violoncello</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Sabado, 10 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item"><span class="obra-titulo">"Marujita"</span> (gran seleccion) - <span class="obra-compositor">Vives y Pacheco</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Rigoletto"</span> (fantasia) - <span class="obra-compositor">G. Verdi</span></div>
+                                <div class="obra-item">Solista de trompeta <span class="artista-nombre">Sr. Duran</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Solista de violin Sr. Ibanez</span>: <span class="obra-titulo">"Scene de ballet"</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artistas-section">
+                        <div class="artistas-titulo">Artistas y agrupaciones</div>
+                        <div class="artistas-lista">
+                            <span class="artista-tag">El Sexteto de Radio Salamanca</span>
+                            <span class="artista-tag">Beibdugoceff-Jazz</span>
+                            <span class="artista-tag">Maestro Bernalt</span>
+                            <span class="artista-tag">Sr. Benito (tenor)</span>
+                            <span class="artista-tag">Sr. Ceballos (violoncello)</span>
+                            <span class="artista-tag">Sr. Ibanez (violin)</span>
+                            <span class="artista-tag">Sr. Feixerado (saxofon)</span>
+                            <span class="artista-tag">Sr. Duran (trompeta)</span>
+                        </div>
+                        <div class="compositores-section">
+                            <div class="artistas-titulo">Compositores interpretados</div>
+                            <div class="artistas-lista">
+                                <span class="artista-tag compositor-tag">Schubert</span>
+                                <span class="artista-tag compositor-tag">Mendelssohn</span>
+                                <span class="artista-tag compositor-tag">Delibes</span>
+                                <span class="artista-tag compositor-tag">Donizetti</span>
+                                <span class="artista-tag compositor-tag">Verdi</span>
+                                <span class="artista-tag compositor-tag">Wagner</span>
+                                <span class="artista-tag compositor-tag">Beethoven</span>
+                                <span class="artista-tag compositor-tag">Tchaikovski</span>
+                                <span class="artista-tag compositor-tag">Saint-Saens</span>
+                                <span class="artista-tag compositor-tag">Moreno Torroba</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+        <!-- SEMANA 4: 25 julio 1926 -->
+        <div id="semana4" class="tab-content">
+            <button class="btn-volver" onclick="volverInicio()">&#8592; Volver a semanas</button>
+            <article class="semana-card">
+                <div class="semana-header">
+                    <div class="semana-fecha">25 de julio de 1926</div>
+                    <div class="semana-badge">Semana 16</div>
+                </div>
+                <div class="semana-content">
+
+                    <div class="dia-programacion">
+                        <div class="dia-titulo">Domingo, 25 de julio de 1926</div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">17:00 - 19:00 h - Emision infantil</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Cuentos y recitados</div>
+                                <div class="obra-item">Concierto por la orquesta de la Estacion</div>
+                            </div>
+                        </div>
+                        <div class="horario-bloque">
+                            <div class="horario-hora">21:00 - 23:00 h - Concierto</div>
+                            <div class="horario-contenido">
+                                <div class="obra-item">Pagina festiva. Concierto de musica ligera por la <span class="artista-nombre">Orquesta Radio</span></div>
+                                <div class="obra-item"><span class="artista-nombre">El Sexteto</span>:</div>
+                                <div class="obra-item"><span class="obra-titulo">"Corazon Gitano"</span> (pasodoble) - <span class="obra-compositor">M. Domingo</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"El barquillero"</span> (fantasia) - <span class="obra-compositor">R. Chapi</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Danza sexta"</span> - <span class="obra-compositor">Granados</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"Manon"</span> (fantasia) - <span class="obra-compositor">Massenet</span></div>
+                                <div class="obra-item"><span class="obra-titulo">"La corte de los grajos"</span> (selecciones) - <span class="obra-compositor">Alonso</span></div>
+                                <div class="obra-item"><span class="artista-nombre">Solista de violin Sr. Ibanez</span>: <span class="obra-titulo">"Rhapson polonaise"</span>; <span class="obra-titulo">"Serenata"</span> - <span class="obra-compositor">Bruch</span></div>
+                                <div class="obra-item">Intermedio literario</div>
+                                <div class="obra-item">Musica ligera para baile, por la <span class="artista-nombre">Orquestina Radio</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="artistas-section">
+                        <div class="artistas-titulo">Artistas y agrupaciones</div>
+                        <div class="artistas-lista">
+                            <span class="artista-tag">El Sexteto de Radio Salamanca</span>
+                            <span class="artista-tag">Orquesta Radio</span>
+                            <span class="artista-tag">Orquestina Radio</span>
+                            <span class="artista-tag">Sr. Ibanez (violin)</span>
+                        </div>
+                        <div class="compositores-section">
+                            <div class="artistas-titulo">Compositores interpretados</div>
+                            <div class="artistas-lista">
+                                <span class="artista-tag compositor-tag">R. Chapi</span>
+                                <span class="artista-tag compositor-tag">Granados</span>
+                                <span class="artista-tag compositor-tag">Massenet</span>
+                                <span class="artista-tag compositor-tag">Bruch</span>
+                                <span class="artista-tag compositor-tag">Alonso</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nota-historica" style="margin-top: 30px;">
+                        <h3>Nota</h3>
+                        <p>Este numero de ONDAS solo incluye la programacion del domingo 25 de julio de 1926.</p>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">Radio Salamanca EAJ 22</div>
+        <div class="fleuron">&#10022; &#10022; &#10022;</div>
+        <div class="footer-text">
+            Programaciones historicas documentadas en la revista ONDAS (Madrid, 1926).<br>
+            Centenario de la radiodifusion salmantina: 11 de abril de 1926 - 11 de abril de 2026.
+        </div>
+        <div class="footer-credit">
+            Proyecto <a href="https://leximususal.github.io/MUSLYME/" target="_blank">MUSLYME</a> - Universidad de Salamanca<br>
+            Contacto: <a href="mailto:muslyme@usal.es">muslyme@usal.es</a>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Hide navigation
+            document.getElementById('mainNav').style.display = 'none';
+
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({
+                top: document.querySelector('.section-title').offsetTop - 20,
+                behavior: 'smooth'
+            });
+        }
+
+        function volverInicio() {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show navigation
+            document.getElementById('mainNav').style.display = 'flex';
+
+            // Scroll to navigation
+            window.scrollTo({
+                top: document.querySelector('.section-title').offsetTop - 20,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+</body>
+</html>
