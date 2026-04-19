@@ -486,9 +486,33 @@
       background: rgba(145,65,14,0.16);
     }
 
+    /* ── HAMBURGER ── */
+    .nav-ham {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-ham span {
+      display: block; width: 22px; height: 2px;
+      background: rgba(232,219,200,0.8); border-radius: 2px;
+      transition: transform 0.28s, opacity 0.28s;
+    }
+    .nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-ham.open span:nth-child(2) { opacity: 0; }
+    .nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     @media (max-width: 768px) {
       .site-nav { padding: 14px 20px; }
-      .nav-links { display: none; }
+      .nav-ham { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: rgba(10,8,5,0.97);
+        border-bottom: 1px solid rgba(232,219,200,0.08);
+        padding: 4px 0 12px;
+        backdrop-filter: blur(6px);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(232,219,200,0.06); font-size: 11px; color: rgba(232,219,200,0.75); }
       h1 { font-size: 2.2rem; }
       header { padding: 100px 20px 50px; }
       .btn-centenario { font-size: 1.3rem; padding: 18px 36px; }
@@ -514,6 +538,7 @@
     <a href="https://leximususal.github.io/MUSLYME/estadisticas_ondas.html">Datos</a>
     <a href="https://leximususal.github.io/MUSLYME/ondas_timeline_iconografia.html">Línea temporal</a>
   </div>
+  <button class="nav-ham" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
 <header>
@@ -5394,6 +5419,14 @@ Una vez realizadas dichas mejoras, volverá esta Estación a su funcionamiento n
     </footer>
 
     <script>
+        // Hamburger
+        (function(){
+          var btn=document.querySelector('.nav-ham'), menu=document.querySelector('.nav-links');
+          if(!btn||!menu) return;
+          btn.addEventListener('click',function(){ btn.classList.toggle('open'); menu.classList.toggle('open'); });
+          document.addEventListener('click',function(e){ if(!btn.contains(e.target)&&!menu.contains(e.target)){ btn.classList.remove('open'); menu.classList.remove('open'); } });
+        })();
+
         function showTab(tabId) {
             document.getElementById('mainNav').style.display = 'none';
             document.querySelectorAll('.tab-content').forEach(content => {
