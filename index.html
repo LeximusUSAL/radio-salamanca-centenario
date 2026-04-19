@@ -486,6 +486,25 @@
       background: rgba(145,65,14,0.16);
     }
 
+    /* ── RADIO LOGO ── */
+    .radio-logo-wrap {
+      position: relative;
+      height: 120px;
+      overflow: visible;
+    }
+    .radio-logo-img {
+      position: absolute;
+      bottom: 0;
+      right: 48px;
+      height: 130px;
+      width: auto;
+      opacity: 0.85;
+      transform: rotate(8deg);
+      transform-origin: bottom right;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) { .radio-logo-wrap { display: none; } }
+
     /* ── HAMBURGER ── */
     .nav-ham {
       display: none; flex-direction: column; gap: 5px;
@@ -5405,6 +5424,10 @@ Una vez realizadas dichas mejoras, volverá esta Estación a su funcionamiento n
         </div>
 
 
+    </div>
+
+    <div class="radio-logo-wrap">
+      <img src="radio_1926.png" alt="Radio de 1926" class="radio-logo-img">
     </div>
 
     <footer>
